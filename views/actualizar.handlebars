@@ -1,0 +1,58 @@
+<main class="h-[90vh] w-[100%] flex justify-center items-center">
+
+    <table class="border rounded w-[80%] text-center">
+        <thead class="text-sky-500">
+            <th class="border p-[5px]">Marca</th>
+            <th class="border">Modelo</th>
+            <th class="border">Ano de fabrico</th>
+            <th class="border">Preço</th>
+            <th class="border">Nome do Proprietário</th>
+            <th>Acções</th>
+        </thead>
+        <tbody>
+            {{#each registro}}
+            <tr style="transition: background-color 1s;">
+                <form action="/actualizar-dado/{{id}}" method="post">
+
+                    <td class="border p-[10px] " style="transition: background-color 1s;">
+                        <input type="text" name="marca"
+                           id="campo1" class="border-sky-200 border-[2px] focus:outline-none w-[95%] h-[35px] rounded px-[10px] "
+                            value="{{marca}}">
+                    </td>
+
+                    <td class="border" style="transition: background-color 1s;">
+                        <input type="text" name="modelo"
+                          id="campo2"  class="border-sky-200 border-[2px] focus:outline-none w-[95%] h-[35px] rounded px-[10px]"
+                            value="{{modelo}}">
+                    </td>
+
+                    <td class="border " style="transition: background-color 1s;">
+                        <input type="number" name="ano"
+                           id="campo3" class="border-sky-200 border-[2px] focus:outline-none w-[95%] h-[35px] rounded px-[10px]"
+                            value="{{ano_de_fabrico}}">
+                    </td>
+
+                    <td class="border " style="transition: background-color 1s;">
+                        <input type="text" name="preco"
+                          id="campo4"  class="border-sky-200 border-[2px] focus:outline-none w-[95%] h-[35px] rounded px-[10px]"
+                            value="{{preco}}">
+                    </td>
+
+                    <td class="border" style="transition: background-color 1s;">
+                        <input type="text" name="Proprietario"
+                          id="campo5"  class="border-sky-200 border-[2px] focus:outline-none w-[95%] h-[35px] rounded px-[10px]"
+                            value="{{proprietario}}">
+                    </td>
+
+                    <td class="border bg-white w-[140px]">
+                        <a href="/actualizar-dados/{{id}}">
+                            <button
+                                class="bg-sky-500 w-[120px] h-[35px] rounded text-white hover:bg-sky-700">Actualizar<button>
+                        </a>
+                    </td>
+                </form>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</main>

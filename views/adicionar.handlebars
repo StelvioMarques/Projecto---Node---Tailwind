@@ -1,0 +1,32 @@
+<main class="h-[90vh] w-[100%] flex justify-center items-center">
+
+    <form action="/adicionar-dados" method="post"
+        class="border w-[30%] h-[80%] flex flex-col items-center justify-center gap-[20px] rounded" >
+
+        <div class="pb-[10px]">
+            <h1 class="text-3xl ">Informações do carro</h1>
+        </div>
+        
+        <input type="text" name="marca" id="marca"
+            class="border-slate-700 border-[2px] focus:outline-none w-[80%] h-[35px] rounded px-[10px] placeholder:text-sky-700"
+            required placeholder="Marca...">
+
+        <input type="text" name="modelo" id="modelo"
+            class="border-slate-700 border-[2px] focus:outline-none w-[80%] h-[35px] rounded px-[10px] placeholder:text-sky-700"
+            required placeholder="Modelo...">
+
+        <input type="number" name="ano" id="ano_fa"
+            class="border-slate-700 border-[2px] focus:outline-none w-[80%] h-[35px] rounded px-[10px] placeholder:text-sky-700"
+            required placeholder="Ano de fabrico...">
+
+        <input type="text" name="preco" id="preco"
+            class="border-slate-700 border-[2px] focus:outline-none w-[80%] h-[35px] rounded px-[10px] placeholder:text-sky-700"
+            required placeholder="Preço...">
+
+        <input type="text" name="Proprietario" id="proprietario"
+            class="border-slate-700 border-[2px] focus:outline-none w-[80%] h-[35px] rounded px-[10px] placeholder:text-sky-700"
+            required placeholder="Nome do proprietário...">
+
+        <button class="w-[80%] h-[40px] bg-sky-500 text-white rounded hover:bg-sky-700 ">Adicionar</button>
+    </form>
+</main>

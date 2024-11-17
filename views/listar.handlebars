@@ -1,0 +1,27 @@
+<main class="h-[90vh] w-[100%] flex justify-center items-center">
+
+    <table class="border w-[70%] text-center">
+        <thead class="text-sky-500" >
+            <th class="border p-[5px]">Marca</th>
+            <th class="border">Modelo</th>
+            <th class="border">Ano de fabrico</th>
+            <th class="border">Preço</th>
+            <th class="border">Nome do Proprietário</th>
+        </thead>
+        <tbody>
+            {{#each registro}}
+                <tr class="hover:bg-sky-500 hover:text-white" style="transition: background-color 1s;">
+                    <td class="border p-[10px] hover:bg-sky-700 tab" style="transition: background-color 1s;">{{marca}}</td>
+
+                    <td class="border hover:bg-sky-700" style="transition: background-color 1s;">{{modelo}}</td>
+
+                    <td class="border hover:bg-sky-700" style="transition: background-color 1s;">{{ano_de_fabrico}}</td>
+
+                    <td class="border hover:bg-sky-700" style="transition: background-color 1s;">{{preco}}</td>
+                    
+                    <td class="border hover:bg-sky-700">{{proprietario}}</td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</main>
