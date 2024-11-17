@@ -1,22 +1,19 @@
 const { raw } = require('body-parser')
 const Sequelize = require('sequelize')
+require('dotenv').config()
 
 // credenciais da base de dados
-const conexao = new Sequelize(process.env.MYSQL_URL, {
+const conexao = new Sequelize(process.env.MYSQLDATABASE, process.env.MYSQLUSER, process.env.MYSQLPASSWORD, {
+    host: process.env.MYSQLHOST,
     dialect: 'mysql',
-    dialectOptions: {
-      ssl: {
-        require: true,
-        rejectUnauthorized: false
-      }
-    }
-  });
-  
-  
+    port: process.env.MYSQLPORT
+});
+
+
 // verica a conexão
-conexao.authenticate().then(function(){
+conexao.authenticate().then(function () {
     console.log('Conexão estabelecida com suceso!')
-}).catch(function(erro){
+}).catch(function (erro) {
     console.log('Ocorreu um erro ao estabelecer a conexão!', erro)
 })
 
