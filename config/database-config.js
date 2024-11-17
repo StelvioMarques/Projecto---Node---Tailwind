@@ -2,12 +2,17 @@ const { raw } = require('body-parser')
 const Sequelize = require('sequelize')
 
 // credenciais da base de dados
-const conexao = new Sequelize('crud', 'root', 'Station007', {
-    host: 'localhost',
+const conexao = new Sequelize(process.env.MYSQL_URL, {
     dialect: 'mysql',
-    query: {raw: true}
-})
-
+    dialectOptions: {
+      ssl: {
+        require: true,
+        rejectUnauthorized: false
+      }
+    }
+  });
+  
+  
 // verica a conexão
 conexao.authenticate().then(function(){
     console.log('Conexão estabelecida com suceso!')
